@@ -12,7 +12,7 @@ with open('bannedcrewlist.txt', 'r') as bcrewlist:
 inbcrews = []
 
 for crew in sys.argv[1:]:
-	if crew in bcrews:
+	if crew.upper() in bcrews:
 		inbcrews.append(crew)
 		
 if not inbcrews:
@@ -21,4 +21,4 @@ if not inbcrews:
 else:
 	print("User is in the following banned crews: ")
 	for crew in inbcrews:
-		print(crew)
+		print(crew.upper())
